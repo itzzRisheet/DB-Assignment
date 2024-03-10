@@ -4,7 +4,9 @@ const productSchema = Schema({
   name: String,
   desc: String,
   SKU: String,
-  catagory_id: [{ type: mongoose.Types.ObjectId, ref: "ProductCategory" }],
+  catagory_id: [
+    { type: mongoose.Types.ObjectId, ref: "ProductCategory", required: true },
+  ],
   inventory_id: [{ type: mongoose.Types.ObjectId, ref: "ProductInventory" }],
   price: mongoose.Types.Decimal128,
   discount_id: [{ type: mongoose.Types.ObjectId, ref: "Discount" }],
